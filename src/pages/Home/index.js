@@ -6,7 +6,6 @@ import FavoriteContextProvider from '../../Context/FavoriteContext';
 function Home() {
   const [newsData, setNewsData] = useState([])
   const [categoryValue, setCategoryValue] = useState('all')
-  // const [favoriteCard, SetFavoriteCard] = useState([])
 
   useEffect(() => {
     let active = true;
