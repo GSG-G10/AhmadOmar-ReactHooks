@@ -9,8 +9,15 @@ function Home() {
   // const [favoriteCard, SetFavoriteCard] = useState([])
 
   useEffect(() => {
+    let active = true;
     getNewsData(categoryValue)
-      .then(result => setNewsData(result))
+      .then(result => {
+        if(active) {
+          setNewsData(result)}
+        })
+        return () => {
+          active = false;
+        }
     
   }, [categoryValue])
 
