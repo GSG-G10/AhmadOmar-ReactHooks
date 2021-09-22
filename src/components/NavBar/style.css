@@ -1,0 +1,27 @@
+.nav-bar {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #000;
+}
+.nav-items {
+  display: flex;
+}
+.nav-items li {
+  list-style-type: none;
+  padding: 0 15px;
+
+}
+.nav-items li a {
+  text-decoration: none;
+  background-color: #ffffff4f;
+  color: #fff;
+  padding: 5px 12px 2px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+.nav-items li a:hover {
+  background-color: aliceblue;
+  color: #000;
+}

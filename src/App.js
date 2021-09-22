@@ -1,25 +1,27 @@
-import { useEffect, useState } from 'react';
-import getNewsData from './utils/getNewsData';
-import NewsCategories from './components/NewsCategories';
-import NewsCards from './components/NewsCards';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home from './pages/Home';
+import Favorite from './pages/Favorite';
+import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
-  const [newsData, setNewsData] = useState([])
-  const [categoryValue, setCategoryValue] = useState('all')
-  useEffect(() => {
-    getNewsData(categoryValue)
-      .then(result => setNewsData(result))
-    
-  }, [categoryValue])
   
   return (
+    <Router>
     <div className="App">
+    <NavBar />
       <div className="container">
-        <NewsCategories categoryValue={categoryValue} setCategoryValue={setCategoryValue} />
-        <NewsCards newsData={newsData} />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/pages/Favorite">
+          <Favorite />
+        </Route>
+      </Switch>
       </div>
     </div>
+    </Router>
   );
 }
 
