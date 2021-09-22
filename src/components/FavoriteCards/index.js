@@ -6,7 +6,7 @@ function FavoriteCards() {
 
   return (
     <div className="news-cards">
-      {favItems.map(({author, content, date, imageUrl, title, readMoreUrl}, i) => (
+      {!favItems ? <h5>You don't have favorite news!</h5> : favItems.map(({author, content, date, imageUrl, title, readMoreUrl}, i) => (
         <div key={i} id={i} name={title.split(' ').join('_')} className="news-card">
         <h4 className="card-title">{title}</h4>
         <div className="card-img">
