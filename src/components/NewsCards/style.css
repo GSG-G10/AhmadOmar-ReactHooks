@@ -80,3 +80,19 @@
   overflow-y: scroll;
   padding-right: 14px;
 }
+@media screen and (max-width: 1366px) {
+  .news-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 950px) {
+  .news-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 567px) {
+  .news-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+}
