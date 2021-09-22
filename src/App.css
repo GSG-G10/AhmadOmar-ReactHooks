@@ -10,3 +10,8 @@ body {
   width: 70%;
   margin: auto;
 }
+@media screen and (max-width: 1900px) {
+  .container {
+    width: 95%;
+  }
+}
