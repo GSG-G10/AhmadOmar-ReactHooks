@@ -1,0 +1,21 @@
+.news-categories {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.news-categories select {
+  height: 35px;
+  width: 250px;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0px 8px;
+  font-size: 14px;
+}
+.news-categories select:focus {
+  outline: none;
+}
+.news-categories select:focus, 
+.news-categories select:hover {
+  border: 1px solid #000;
+}
