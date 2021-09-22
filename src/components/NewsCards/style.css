@@ -80,6 +80,22 @@
   overflow-y: scroll;
   padding-right: 14px;
 }
+.added-fav-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000091;
+}
+.added-fav-success h3{
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 4px;
+}
 @media screen and (max-width: 1366px) {
   .news-cards {
     grid-template-columns: repeat(3, 1fr);
