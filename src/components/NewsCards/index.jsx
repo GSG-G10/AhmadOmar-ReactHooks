@@ -1,16 +1,22 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './style.css';
 import {ReactComponent as FavIcon} from '../../assets/favorite.svg';
+import { FavoriteContext } from '../../Context/FavoriteContext';
 
 function NewsCards({newsData}) {
+  const {favoriteCard, SetFavoriteCard} = useContext(FavoriteContext)
+  const handleAddToFav = (i) => {
+      SetFavoriteCard([...favoriteCard, newsData[i]])
+      localStorage.setItem('favorites', JSON.stringify([...favoriteCard, newsData[i]]))
+  }
   return (
     <div className="news-cards">
-      {newsData.map(({author, content, date, imageUrl, title, readMoreUrl}) => (
-          <div key={Math.random()*10} className="news-card">
+      {newsData.map(({author, content, date, imageUrl, title, readMoreUrl}, i) => (
+          <div key={i} id={i} className="news-card">
               <h4 className="card-title">{title}</h4>
               <div className="card-img">
                 <img src={imageUrl} alt={title} />
-                <div className="fav-icon">
+                <div className="fav-icon" onClick={() => handleAddToFav(i)}>
                   <FavIcon />
                 </div>
               </div>
