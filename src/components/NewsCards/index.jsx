@@ -23,7 +23,7 @@ function NewsCards({newsData}) {
     setTimeout(() => {
       setFavAdded(false)
       setFavFailed(false)
-    }, 15000);
+    }, 2000);
     
   }, [favAdded, favFailed])
   
