@@ -5,19 +5,27 @@ import { FavoriteContext } from '../../Context/FavoriteContext';
 
 function NewsCards({newsData}) {
   const [favAdded, setFavAdded] = useState(false)
+  const [favFailed, setFavFailed] = useState(false)
+
+  
   const {favoriteCard, SetFavoriteCard} = useContext(FavoriteContext)
   const handleAddToFav = (i) => {
+    if (!favoriteCard.includes(newsData[i])) {
       SetFavoriteCard([...favoriteCard, newsData[i]])
       localStorage.setItem('favorites', JSON.stringify([...favoriteCard, newsData[i]]))
       setFavAdded(true)
-
+    } else {
+      setFavFailed(true)
+    }
+      
   }
   useEffect(() => {
     setTimeout(() => {
       setFavAdded(false)
-    }, 2000);
+      setFavFailed(false)
+    }, 15000);
     
-  }, [favAdded])
+  }, [favAdded, favFailed])
   
   return (
     <>
@@ -43,6 +51,9 @@ function NewsCards({newsData}) {
       ))}
     </div>
     {favAdded ? <div className="added-fav-success"><h3>Added to Favourites</h3></div> : ''}
+    {favFailed ? <div className="added-fav-success"><h3>This card is already added</h3></div> : ''}
+
+
     
     </>
   )
